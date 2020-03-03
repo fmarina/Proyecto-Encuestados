@@ -17,7 +17,7 @@ var Modelo = function() {
 Modelo.prototype = {
   //se obtiene el id más grande asignado a una pregunta
   obtenerUltimoId: function() {
-    // Lo que debe hacer esta función es buscar el id más alto y asignar ese id a la nueva pregunta. Para hacerlo vas a tener que recorrer la lista de preguntas del modelo.
+    // Esta función busca el id más alto y asigna ese id a la nueva pregunta. 
     for(var i = 0; i < this.preguntas.length; i++){      
       if(this.preguntas[i].id > this.ultimoId){
         this.ultimoId = this.preguntas[i].id;

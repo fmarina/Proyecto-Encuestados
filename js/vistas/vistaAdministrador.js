@@ -24,7 +24,6 @@ var VistaAdministrador = function(modelo, controlador, elementos) {
 VistaAdministrador.prototype = {
   //lista
   inicializar: function() {
-    //llamar a los metodos para reconstruir la lista, configurar botones y validar formularios
     this.reconstruirLista();
     this.configuracionDeBotones();
     validacionDeFormulario();
@@ -33,8 +32,6 @@ VistaAdministrador.prototype = {
   construirElementoPregunta: function(pregunta){
     var contexto = this;
     var nuevoItem;
-    //completar  
-    //asignar a nuevoitem un elemento li con clase "list-group-item", id "pregunta.id" y texto "pregunta.textoPregunta"
     nuevoItem = $('<li></li>').addClass('list-group-item').attr('id', pregunta.id).text(pregunta.textoPregunta);
 
     var interiorItem = $('.d-flex');
@@ -66,7 +63,6 @@ VistaAdministrador.prototype = {
       var respuestas = [];
 
       $('[name="option[]"]').each(function() {
-        //completar
         var respuesta = $(this).val();
         if(respuesta !== ""){          
           respuestas.push({
@@ -78,7 +74,6 @@ VistaAdministrador.prototype = {
       contexto.limpiarFormulario();      
       contexto.controlador.agregarPregunta(value, respuestas);
     });
-    //asociar el resto de los botones a eventos
 
     e.botonEditarPregunta.click(function(){
       var id = parseInt($('.list-group-item.active').attr('id'));
@@ -99,12 +94,3 @@ VistaAdministrador.prototype = {
     $('.form-group.answer.has-feedback.has-success').remove();
   },
 };
-
-/*
-  Ejemplo de pregunta:
-  {'texto': unTexto, 'id': id, 'cantidadPorRespuesta': respuestas}
-
-  Una respuesta es un diccionario que tiene un texto y una cantidad de votos.
-  Ejemplo de respuesta:
-  {'textoRespuesta': respuesta, 'cantidad': cantVotos}
-*/

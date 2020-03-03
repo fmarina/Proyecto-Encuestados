@@ -8,7 +8,7 @@ var VistaUsuario = function(modelo, controlador, elementos) {
   var contexto = this;
 
   //suscripcion a eventos del modelo
-  /*En nuestro caso, cada vez que se agrega o elimina una pregunta, nos va a interesar que se actualice el formulario de votación, o sea que cada pregunta sea mostrada por pantalla con sus respectivas respuestas.*/
+  /* Cada vez que se agrega o elimina una pregunta, nos va a interesar que se actualice el formulario de votación, o sea que cada pregunta sea mostrada por pantalla con sus respectivas respuestas.*/
   this.modelo.preguntaAgregada.suscribir(function() {
     contexto.reconstruirLista();    
   });
@@ -58,7 +58,6 @@ VistaUsuario.prototype = {
     var contexto = this;
     var preguntas = this.modelo.preguntas;
     preguntas.forEach(function(clave){
-      //completar //hay que agregar a listaPreguntas un elemento div con valor "clave.textoPregunta", texto "clave.textoPregunta", id "clave.id"
       listaPreguntas.append($('<div>', {
         value: clave.textoPregunta,
         text: clave.textoPregunta,
